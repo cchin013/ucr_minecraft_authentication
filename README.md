@@ -3,5 +3,5 @@ website made to ensure that only UCR students get on the UCR minecraft server - 
 
 made with:
 
-Laravel (and by extension - Composer)
-VueJS (and by extension - HTML/CSS/JavaScript)
+- Laravel (and by extension - Composer)
+- VueJS (and by extension - HTML/CSS/JavaScript)
