@@ -1,3 +1,4 @@
+{{--Highlander Gaming, Minecraft, information, about us, register button, support, etc, basically all the breadcrumbs/navigation--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
