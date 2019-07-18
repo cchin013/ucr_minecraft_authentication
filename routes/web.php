@@ -1,21 +1,11 @@
 <?php
 
-Route::get('/', function() {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register', 'RegisterController@index');
 
-Route::get('/login', function() {
-    return view('login');
-});
+Route::get('/login', 'LoginController@index');
 
-Route::get('/dashboard', function() {
-    return view('dashboard');
-});
+Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/support', function() {
-    return view('support');
-});
+Route::get('/support', 'SupportController@index');
