@@ -8,6 +8,10 @@ made with:
 - Node (literally just because I need npm to install vue and it comes with node)
 
 things i've learned:
-don't develop on windows because things don't work out of the box 99% of the time wooooooo
+> don't develop on windows because things don't work out of the box 99% of the time wooooooo
+
+frequently asked questions:
+- why did you develop directly on master?
+> i'm lazy
 
 
