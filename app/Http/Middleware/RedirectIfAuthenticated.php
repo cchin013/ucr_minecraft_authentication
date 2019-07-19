@@ -17,6 +17,11 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        /**
+         * If someone is authenticated already,
+         * and they try to access an unauthenticated/guest only route,
+         * send them back to the dashboard. e.g., login/register
+         */
         if (Auth::guard($guard)->check()) {
             return redirect('/dashboard');
         }
