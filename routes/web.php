@@ -4,8 +4,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
 
 Route::get('/support', 'SupportController@index');
-
-Route::get('/home', 'HomeController@index');
