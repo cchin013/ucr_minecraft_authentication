@@ -3,7 +3,7 @@ website made to ensure that only UCR students get on the UCR minecraft server - 
 
 made with / with the help of:
 
-- Laravel (and by extension - Composer)
+- Laravel (and by extension - PHP and Composer)
 - VueJS (and by extension - HTML/CSS/JavaScript)
 - Node (literally just because I need npm to install vue and it comes with node)
 - Vue CLI because a google search told me this would make development faster (it did)
