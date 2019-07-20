@@ -29,6 +29,15 @@ class LoginController extends Controller
     protected $redirectTo = '/dashboard';
 
     /**
+     * Lock people out of login attempts
+     * for 3 minutes after
+     * failing too many attempts
+     *
+     * @var int
+     */
+    protected $decayMinutes = 3;
+
+    /**
      * Where to redirect users after logout.
      *
      * @param Request $request
