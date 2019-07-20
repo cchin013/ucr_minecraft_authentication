@@ -10,9 +10,8 @@
             <form method="POST" action="{{ route('dashboard') }}">
                 @csrf
                 <div class="form-group row">
-                    <div class="card">
+                    <div class="card" style="width:450px;">
                         <div class="card-header">Tie your Minecraft username to your UCR email</div>
-                        <div class="card-title text-center px-2 pt-2 text-danger">WARNING: You can only update your username once per hour.</div>
                         @if(Auth::user()->minecraft_username)
                             <div class="card-subtitle text-center mx-2 mt-2">Your currently attached username: {{Auth::user()->minecraft_username}}</div>
                         @endif
@@ -23,7 +22,7 @@
                         <div class="card-body">
                             <label for="minecraft_username"
                                    class="col-md-12 col-form-label text-md-left">{{ __('Minecraft Username') }}</label>
-                            <div class="col-md-12">
+                            <div class="col-md-12 text-center">
                                 <input id="minecraft_username" type="text"
                                        class="form-control @error('minecraft_username') is-invalid @enderror"
                                        name="minecraft_username" value="{{ old('minecraft_username') }}"
@@ -34,9 +33,9 @@
                                 </span>
                                 @enderror
                                 @if(session('message'))
-                                    <div class="text-success">
+                                    <span style="font-size: 80%;" class="animated flash text-success">
                                         <strong> {{ session('message') }}</strong>
-                                    </div>
+                                    </span>
                                 @endif
                                 <div class="form-group row mb-0 mt-4">
                                     <div class="col-md-12">
