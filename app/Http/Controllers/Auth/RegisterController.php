@@ -48,11 +48,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'email.regex' => 'The email must follow this format: abcd1234@ucr.edu'
+        ];
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'user_id' => ['required', 'string', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'regex:/^[A-Za-z]+[0-9]+@ucr.edu$/i'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'discord_id' => ['nullable', 'string', 'unique:users', 'regex:/^.*#[0-9]+$/i']
+        ], $messages);
     }
 
     /**
@@ -64,9 +69,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'user_id' => $data['user_id'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'discord_id' => $data['discord_id']
         ]);
     }
 }
