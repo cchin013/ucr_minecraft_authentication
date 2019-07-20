@@ -17,9 +17,11 @@
                     </div>
 
                     <div class="card-body">
-                        <p>Players Online: </p>
-                        <p>Minecraft Version: </p>
                         <p>Server IP: </p>
+                        <p>Server Status: </p>
+                        <p>Minecraft Version: </p>
+                        <p>Players Online: </p>
+                        <p>Registered Players: </p>
                     </div>
                 </div>
 
