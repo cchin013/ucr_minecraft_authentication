@@ -14,6 +14,9 @@ made with / with the help of:
 
 things i've learned:
 > don't develop on windows because things don't work out of the box 99% of the time wooooooo
+> elastic beanstalk requires a .ebextensions folder at the root directory to run scripts during deployment. this was vital to the project since I need to artisan migrate the databases during every deployment and I couldn't figure out how to SSH into beanstalk to change the files
+> change environment from local->prod during deployment
+> read documentation often
 
 frequently asked questions / frequent feedback:
 - why did you develop directly on master?
