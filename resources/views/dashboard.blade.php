@@ -13,6 +13,13 @@
                     <div class="card">
                         <div class="card-header">Tie your Minecraft username to your UCR email</div>
                         <div class="card-title text-center px-2 pt-2 text-danger">WARNING: You can only update your username once per hour.</div>
+                        @if(Auth::user()->minecraft_username)
+                            <div class="card-subtitle text-center mx-2 mt-2">Your currently attached username: {{Auth::user()->minecraft_username}}</div>
+                        @endif
+
+                        @if(!Auth::user()->minecraft_username)
+                            <div class="card-subtitle text-center mx-2 mt-2">You have not attached a username yet.</div>
+                        @endif
                         <div class="card-body">
                             <label for="minecraft_username"
                                    class="col-md-12 col-form-label text-md-left">{{ __('Minecraft Username') }}</label>
@@ -26,6 +33,11 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                                @if(session('message'))
+                                    <div class="text-success">
+                                        <strong> {{ session('message') }}</strong>
+                                    </div>
+                                @endif
                                 <div class="form-group row mb-0 mt-4">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-block btn-primary">
