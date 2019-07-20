@@ -30,5 +30,7 @@ class DashboardController extends Controller
         $user->update([
             'minecraft_username' => $request->minecraft_username
         ]);
+
+        return view('dashboard');
     }
 }
