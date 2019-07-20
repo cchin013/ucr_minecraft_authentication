@@ -31,6 +31,6 @@ class DashboardController extends Controller
             'minecraft_username' => $request->minecraft_username
         ]);
 
-        return view('dashboard');
+        return redirect()->back()->with('message', 'Success! You have updated your minecraft username.');
     }
 }
