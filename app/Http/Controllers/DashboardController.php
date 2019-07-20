@@ -31,6 +31,25 @@ class DashboardController extends Controller
             'minecraft_username' => $request->minecraft_username
         ]);
 
-        return redirect()->back()->with('message', 'Success! You have updated your minecraft username.');
+        return redirect()->back()->with('minecraft_success', 'Success! You have updated your minecraft username.');
+    }
+
+    protected function updateDiscordID(Request $request) {
+        $user = $request->user();
+
+        $error = [
+          'discord_id.unique' => "This Discord ID is already in use.",
+          'discord_id.regex' => "The Discord ID must be in the format: Example#1234."
+        ];
+
+        $this->validate($request, [
+            'discord_id' => ['nullable', 'string', 'unique:users', 'regex:/^.*#[0-9]+$/i']
+        ], $error);
+
+        $user->update([
+            'discord_id' => $request->discord_id
+        ]);
+
+        return redirect()->back()->with('discord_id_success', "Success! You have updated your Discord ID.");
     }
 }

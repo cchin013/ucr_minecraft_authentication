@@ -6,7 +6,8 @@ Route::get('/', 'HomeController@index');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-    Route::post('/dashboard', 'DashboardController@updateMinecraftUsername')->name('dashboard');
+    Route::post('/dashboard/updateMinecraft', 'DashboardController@updateMinecraftUsername')->name('updateMinecraft');
+    Route::post('/dashboard/updateDiscordID', 'DashboardController@updateDiscordID')->name('updateDiscord');
 });
 
 Route::get('/support', 'SupportController@index');
