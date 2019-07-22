@@ -76,7 +76,7 @@
                                            autocomplete="discord_id">
                                     @error('discord_id')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ $errors->get('discord_id') }}</strong>
                                     </span>
                                     @enderror
                                     @if(session('discord_id_success'))
